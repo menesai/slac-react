@@ -9,7 +9,9 @@ import firebase from '../firebase'
 
 class AppTwo extends Component {
   state={
-    currUser: {}
+    currUser: {},
+    channelz: [],
+    channelsRefz: firebase.database().ref('channels'),
   }
 
      componentDidMount(){
@@ -23,13 +25,24 @@ class AppTwo extends Component {
                 this.setState({currUser: user})
             }
         })
+
+        this.addListen()
+    }
+
+     addListen = () => {
+        let loadedChannels =[];
+        this.state.channelsRefz.on('child_added', snap => {
+            loadedChannels.push(snap.val());
+            this.setState({channelz: loadedChannels})
+            // console.log(loadedChannels)
+        })
     }
   render(){
-    // console.log(firebase.
+    // console.log(this.state.channelz)
     return (
       <Grid columns='equal' className='appTwo' style={{background: '#eee'}}>
         <ColorPanel currUser={this.state}/>
-        <SidePanel currUser={this.state}/>
+        <SidePanel currUser={this.state} channelz={this.state.channelz} channelsRefz={this.state.channelsRefz}/>
   
         <Grid.Column style={{marginLeft: 320}}>
         <Messages currUser={this.state}/>

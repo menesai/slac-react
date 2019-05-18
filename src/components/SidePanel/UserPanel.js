@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import {Grid, Header, Icon, Dropdown, Image} from 'semantic-ui-react';
 import firebase from '../../firebase';
-// import {connect} from 'react-redux'
-// import reducer from '../../ducks/reducer'
-// import { stat } from 'fs';
-// import {setUser} from '../../ducks/reducer';
+
  
 class UserPanel extends Component {
     state={

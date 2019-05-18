@@ -5,11 +5,11 @@ import Channels from './Channels'
 
 export class SidePanel extends Component {
   render() {
-    //   console.log(this.props.currUser)
+      const {channelz, channelsRefz} =this.props
     return (
      <Menu size='large' inverted fixed='left' vertical style={{background: '#4c3c4c', fontSize: '1.2rem'}}>
         <UserPanel currUser={this.props}/>
-        <Channels currUser={this.props.currUser}/>
+        <Channels currUser={this.props.currUser} channelz={channelz} channelsRefz={channelsRefz}/>
      </Menu>
     )
   }
