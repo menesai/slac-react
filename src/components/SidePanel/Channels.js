@@ -3,20 +3,25 @@ import {Menu, Icon, Modal, Form, Input, Button} from 'semantic-ui-react';
 // import firebase from '../../firebase'
 
 class Channels extends Component {
-    state={
-        // user: this.props,
-        // channels: [...this.props.channelz],
-        modal: false,
-        nameChannel: '',
-        channelDetails: '',
-        // channelsRef: this.props.channelsRefz,
-        currentChannel: null,
-        firstLoad: true,
-        activeChannel: ''
+    constructor(props){
+        super(props)
+        this.state={
+            // user: this.props,
+            channels: [],
+            ...props,
+            modal: false,
+            nameChannel: '',
+            channelDetails: '',
+            // channelsRef: this.props.channelsRefz,
+            currentChannel: null,
+            firstLoad: true,
+            activeChannel: ''
+        }
     }
 
     // componentDidMount(){
-    //     this.addListeners()
+    //     // const {channelz} =this.props.channelz
+    //     this.setState({channels: this.props.channelz})
     // }
     componentWillMount(){
         this.removeListeners()
@@ -30,6 +35,13 @@ class Channels extends Component {
     //         // console.log(loadedChannels)
     //     })
     // }
+
+        // setChannels = () => {
+        //     return this.props.channelz.map(nam => {
+        //         console.log(nam)
+        //     })
+        //     // return newArr
+        // }
 
     removeListeners = () => {
         this.props.channelsRefz.off()
@@ -94,23 +106,24 @@ class Channels extends Component {
     changeChannel = channel => {
         const {channelz} =this.props
         // this.props.setCurrentChannel(channel)
-        // console.log(channel)
+        console.log(channel)
+        console.log(channelz)
         this.setActiveChannel(channelz)
         this.setState({currentChannel: channelz})
     }
 
     setActiveChannel = (channel) => {
         // console.log(this.props.channelz)
-        return channel.map((el) => {
-            // console.log(el.nam)
-            // return 
-            this.setState({activeChannel: el.id})
-        })
+        // return channel.map((el) => {
+        //     // console.log(el.nam)
+        //     // return 
+        //     this.setState({activeChannel: el.id})
+        // })
         
     }
 
   render() {
-      console.log(this.state.activeChannel)
+    //   console.log(this.state.currentChannel)
    let displayChannels = this.props.channelz.map(channel => {
             // console.log(channel)
             return (

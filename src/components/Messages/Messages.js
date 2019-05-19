@@ -11,9 +11,10 @@ class Messages extends Component {
 
   render() {
     const {messagesRef} =this.state
+    const {channelz}=this.props;
     return (
       <React.Fragment>
-        <MessageHeader/>
+        <MessageHeader channelz={channelz}/>
 
         <Segment>
           <Comment.Group className='messages'>
