@@ -12,7 +12,6 @@ class MessageForm extends Component {
     }
     
     sendMessage = () => {
-        const {messagesRef} = this.props;
         const {message} = this.state;
 
         if(message){
