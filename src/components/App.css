@@ -26,3 +26,16 @@ body,
     right: 1em;
     z-index: 200;
 }
+
+/** message */
+
+.message__self{
+    border-left: 2px solid lightblue;
+    padding-left: 8px;
+}
+
+/** file Message */
+
+.message__image{
+    padding: 1em;
+}
