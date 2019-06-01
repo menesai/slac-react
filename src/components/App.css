@@ -14,6 +14,10 @@ body,
     /* bottom: 2vh; */
 }
 
+.menu{
+    padding-bottom: 2em;
+}
+
 /** message form  */
 
 .message__form{
@@ -38,4 +42,9 @@ body,
 
 .message__image{
     padding: 1em;
+}
+
+.progress_bar{
+    margin: 0.3em 0 0 0 !important;
+    
 }
