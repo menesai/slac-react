@@ -3,7 +3,7 @@ import {Header, Segment, Input, Icon} from 'semantic-ui-react';
 
 class MessageHeader extends Component {
   render() {
-    const {channelName, numUniqueUser, handleSearchChange} =this.props;
+    const {channelName, numUniqueUser, handleSearchChange, isPrivateChannel} =this.props;
     return (
       <Segment clearing>
         <Header fluid='true' as='h2' floated='left' style={{marginBottom: 0}}>
