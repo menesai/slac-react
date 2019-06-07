@@ -114,7 +114,8 @@ class DirectMessages extends React.Component {
               name="circle"
               color={this.isUserOnline(user) ? "green" : "grey"}
             />
-            @ {user.name}
+           {/* <Menu.Item> @ {user.name}</Menu.Item> */}
+             @ {user.name}
           </Menu.Item>
         ))}
       </Menu.Menu>
